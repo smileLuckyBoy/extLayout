@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="ext/ext-all.js"></script>
+<script type="text/javascript" src="ext/locale/ext-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="ext/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+<script type="text/javascript">
+	Ext.onReady(function(){
+		Ext.create('Ext.Viewport',{
+			title : 'border layout',
+			layout : 'border',
+			width : 500,
+			height : 300,
+			items : [{
+				title : 'west panel',
+				width : 200,
+				xtype : 'panel',
+				region : 'west',
+				split : true,
+				layout : 'fit',
+				collapsible : true
+			},{
+				title : 'center panel',
+				xtype : 'panel',
+				region : 'center',
+				split : true,
+				layout : 'fit'
+			},{
+				title : 'south panel',
+				xtype : 'panel',
+				height : 100,
+				region : 'south',
+				split : true,
+				layout : 'fit'
+			}]
+		})
+	})
+</script>
+<body>
+	
+</body>
+</html>

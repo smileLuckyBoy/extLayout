@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="ext/ext-all.js"></script>
+<script type="text/javascript" src="ext/locale/ext-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="ext/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+<script type="text/javascript">
+	Ext.QuickTips.init();
+	Ext.apply(Ext.form.field.VTypes, {
+		age : function(val,field){
+			return /^\d{1,2}$/g.test(val);
+		},
+		ageText : '您输入的年龄不合法'
+	});
+
+	Ext.apply(Ext.form.field.VTypes, {
+    //  vtype validation function
+    time: function(val, field) {
+        return timeTest.test(val);
+    },
+    // vtype Text property: The error text to display when the validation function returns false
+    timeText: 'Not a valid time.  Must be in the format "12:34 PM".',
+    // vtype Mask property: The keystroke filter mask
+    timeMask: /[\d\s:amp]/i
+});
+
+	Ext.onReady(function(){
+		var panel = Ext.create('Ext.panel.Panel',{
+			title      : 'Layout Panel',
+			layout     : 'form',
+			labelAlign : 'right',
+			items : [{
+				allowBlank : false,
+				fieldLabel : '姓名',
+				labelAlign : 'right',
+				name       : 'name',
+				xtype      : 'textfield'
+			},{
+				anchor     : '90%',
+				fieldLabel : '公司',
+				labelAlign : 'right',
+				name       : 'name',
+				xtype      : 'textfield'
+			},{
+				fieldLabel : 'Email',
+				labelAlign : 'right',
+				name       : 'email',
+				vtype      : 'age',
+				xtype      : 'textfield'
+			},{
+				fieldLabel : '年龄',
+				labelAlign : 'right',
+				name       : 'name',
+				vtype      : 'age',
+				xtype      : 'numberfield'
+			}],
+			renderTo : 'div1'
+		})
+		
+	})
+</script>
+<body>
+	<div id="div1"></div>
+	
+</body>
+</html>

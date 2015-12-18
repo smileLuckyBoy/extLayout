@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<script type="text/javascript" src="ext/ext-all.js"></script>
+<script type="text/javascript" src="ext/locale/ext-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="ext/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+<script type="text/javascript">
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'column panel',
+        layout: 'column',
+        items: [{
+            columnWidth: 0.25,
+            title: 'column 1'
+        }, {
+            columnWidth: 0.25,
+            title: 'column 2'
+        }, {
+            columnWidth: 0.25,
+            title: 'column 3'
+        }, {
+            columnWidth: 0.25,
+            title: 'column 4'
+        }],
+        renderTo: Ext.getBody()
+    });
+})
+</script>
+
+<body>
+</body>
+
+</html>
