@@ -1,0 +1,91 @@
+{
+  "text": ".",
+  "children": [
+    {
+      "text": "BasicExtLayouts",
+      "expanded": true,
+      "children": [
+        {
+          "text": "Absolute",
+          "id": "absolute",
+          "leaf": true
+        },
+        {
+          "text": "Accordion",
+          "id": "accordion",
+          "leaf": true
+        },
+        {
+          "text": "Anchor",
+          "id": "anchor",
+          "leaf": true
+        },
+        {
+          "text": "Border",
+          "id": "border",
+          "leaf": true
+        },
+        {
+          "text": "Card(TabPanel)",
+          "id": "card-tabs",
+          "leaf": true
+        },
+        {
+          "text": "Card(Wizard)",
+          "id": "card-wizard",
+          "leaf": true
+        },
+        {
+          "text": "Column",
+          "id": "column",
+          "leaf": true
+        },
+        {
+          "text": "Fit",
+          "id": "fit",
+          "leaf": true
+        },
+        {
+          "text": "Table",
+          "id": "table",
+          "leaf": true
+        },
+        {
+          "text": "vBox",
+          "id": "vbox",
+          "leaf": true
+        },
+        {
+          "text": "hBox",
+          "id": "hbox",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "CustomLayouts",
+      "children": [
+        {
+          "text": "Center",
+          "id": "center",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "CombinationExamples",
+      "children": [
+        {
+          "text": "AbsoluteLayoutForm",
+          "id": "abs-form",
+          "leaf": true
+        },
+        {
+          "text": "TabswithNestedLayouts",
+          "id": "tabs-nested-layouts",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}
