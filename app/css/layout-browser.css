@@ -1,0 +1,17 @@
+.custom-accordion .x-panel-body {
+    background: #ffe;
+    text-align: center;
+}
+
+.custom-accordion .x-panel-body p {
+    color: #15428B;
+    font-family: georgia, serif;
+    font-size: 18px;
+    padding: 20px 80px !important;
+}
+
+.custom-accordion .x-panel-header {
+    color: #555;
+    font-style: italic;
+    font-weight: bold;
+}

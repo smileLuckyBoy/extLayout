@@ -17,7 +17,7 @@ Ext.onReady(function() {
         },
         proxy: {
             type: 'ajax',
-            url: 'tree-data.json'
+            url: 'data/tree-data.json'
         }
     });
 
@@ -29,16 +29,16 @@ Ext.onReady(function() {
         store: store
     });
 
+    //select listener
     treePanel.getSelectionModel().on('select',function(sm,record){
         if(record.get('leaf')){
             var key = record.get('id');
-            if(basicLayoutObj[key] != null){
+            if(basicLayoutObj[key] !== null){
                 Ext.getCmp('content-panel').layout.setActiveItem(key+'-panel');
             }
         }
 
-    })
-
+    });
 
     //center panel
     var contentPanel = {
@@ -48,9 +48,7 @@ Ext.onReady(function() {
         activeItem : 0,
         border : false,
         items : layoutExamples
-    }
-
-
+    };
 
     //build the main layout with the viewport
     Ext.create('Ext.Viewport', {
@@ -84,5 +82,5 @@ Ext.onReady(function() {
         }, 
             contentPanel
         ]
-    })
+    });
 });
