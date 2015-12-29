@@ -1,19 +1,44 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
 </head>
 <script type="text/javascript" src="../ext/ext-all.js"></script>
 <script type="text/javascript" src="../ext/locale/ext-lang-zh_CN.js"></script>
 <link rel="stylesheet" type="text/css" href="../ext/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
-
 <link rel="stylesheet" type="text/css" href="../ext/icon.css">
 <link rel="stylesheet" type="text/css" href="css/layout-browser.css">
-
 <script type="text/javascript" src="js/layouts/basic.js"></script>
 <script type="text/javascript" src="js/complexLayout.js"></script>
+
 <body>
-	
+    <div style="display: none">
+        <div id="absolute-detail">
+            <h2>Ext.layout.container.Absolute</h2>
+            <pre><code>
+title: 'Absolute Layout',
+id: 'absolute-panel',
+layout: 'absolute',
+defaults: {
+    xtype: 'panel',
+    frame: true,
+    width: 500,
+    height: 200
+},
+items: [{
+    title: 'Panel 1',
+    x: 50,
+    y: 50
+}, {
+    title: 'Panel 2',
+    x: 250,
+    y: 250
+}]
+			</code></pre>
+        </div>
+    </div>
 </body>
+
 </html>
