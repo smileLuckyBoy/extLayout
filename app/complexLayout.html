@@ -38,6 +38,210 @@ items: [{
 }]
 			</code></pre>
         </div>
+
+        <div id="accordion-detail">
+            <h2>Ext.layout.container.Accordion</h2>
+            <pre><code>
+title: 'accordion layout',
+id: 'accordion-panel',
+layout: 'accordion',
+items: [{
+    title: 'Introduction',
+    tools: [{
+        type: 'refresh',
+        handler: function(event, toolEl, owner, handler) {
+            Ext.Msg.alert('message', 'handler is called!');
+        }
+    }, {
+        type: 'gear'
+    }],
+    html: '<p>Here is some accordion content.  Click on one of the other bars below for more.</p>',
+}, {
+    title: 'Basic Content',
+    tools: [{
+        type: 'help',
+        tooltip: 'Get help',
+        callBack: function(panel, tool, event) {
+
+        }
+    }],
+    items: [{
+        xtype: 'button',
+        text: 'show Next Panel',
+        handler: function() {
+            Ext.getCmp('custome-panel').expand();
+        }
+    }, {
+        xtype: 'panel',
+        border: false,
+        html: 'more content.Open the third panel for a customized look and feel example.'
+    }]
+}, {
+    title: 'Custome Panel , look and feel',
+    id: 'custome-panel',
+    cls: 'custom-accordion',
+    html: '<p>Here is an example of how easy it is to completely customize the look and feel of an individual panel simply by adding a CSS class in the config.</p>'
+}]
+			</code></pre>
+        </div>
+
+        <div id="anchor-detail">
+            <h2>Ext.layout.container.Anchor</h2>
+            <pre><code>
+title: 'anchor layout',
+id: 'anchor-panel',
+layout: 'anchor',
+defaults: {
+    xtype: 'panel',
+    margin: '5 5',
+    ui: 'light',
+    frame: true
+},
+autoScroll: true,
+items: [{
+    title: 'panel 1',
+    height: 100,
+    anchor: '50%',
+    html: '<p>Width 50% of the Container</p>'
+}, {
+    title: 'panel 2',
+    height: 100,
+    anchor: '-100',
+    html: '<p>container width -100 px</p>'
+}, {
+    title: 'panel 2',
+    height: 100,
+    anchor: '-10 -350',
+    html: '<p>Width = container width -10px</p><p>Height = container hegth -300px</p>'
+}]
+			</code></pre>
+        </div>
+
+        <div id="border-detail">
+            <h2>Ext.layout.container.Border</h2>
+            <pre><code>
+title: 'border layout',
+id: 'border-panel',
+layout: 'border',
+width: 500,
+height: 300,
+items: [{
+    title: 'west panel',
+    width: 200,
+    xtype: 'panel',
+    region: 'west',
+    split: true,
+    layout: 'fit',
+    collapsible: true
+}, {
+    title: 'center panel',
+    xtype: 'panel',
+    region: 'center',
+    split: true,
+    layout: 'fit'
+}, {
+    title: 'south panel',
+    xtype: 'panel',
+    height: 100,
+    region: 'south',
+    split: true,
+    layout: 'fit'
+}]
+			</code></pre>
+        </div>
+
+        <div id="card-tabs-detail">
+            <h2>Ext.layout.container.Card(TabPanel)</h2>
+            <pre><code>
+title: 'cardTab layout',
+id: 'card-tabs-panel',
+xtype: 'tabpanel',
+items: [{
+    title: 'panel 1',
+    html: 'this is conten in panel 1'
+}, {
+    title: 'panel 2',
+    html: 'this is conten in panel 2'
+}, {
+    title: 'panel 3',
+    html: 'this is conten in panel 3'
+}]
+			</code></pre>
+        </div>
+
+        <div id="card-wizard-detail">
+            <h2>Ext.layout.container.Card(Wizard)</h2>
+            <pre><code>
+title: 'cardWizard layout',
+id: 'card-wizard-panel',
+layout: 'card',
+activeItem: 0,
+bodyStyle: 'padding:15px',
+defaults: {
+    xtype: 'panel',
+    border: false
+},
+bbar: ['->', {
+    id: 'card-prev',
+    text: '<< Previous',
+    disabled: true,
+    handler: Ext.Function.bind(nav, this, [-1])
+}, {
+    id: 'card-next',
+    text: 'Next >>',
+    disabled: false,
+    handler: Ext.Function.bind(nav, this, [1])
+
+}],
+items: [{
+    id: 'card-0',
+    html: '<h1>Welcome to the Demo Wizard!</h1><p>Step 1 of 3</p><p>Please click the "Next" button to continue...</p>'
+}, {
+    id: 'card-1',
+    html: '<p>Step 2 of 3</p><p>Almost there.  Please click the "Next" button to continue...</p>'
+}, {
+    id: 'card-2',
+    html: '<h1>Congratulations!</h1><p>Step 3 of 3 - Complete</p>'
+}]
+			</code></pre>
+        </div>
+
+        <div id="column-detail">
+            <h2>Ext.layout.container.Column</h2>
+            <pre><code>
+title : 'column Layout',
+id : 'column-panel',
+layout : 'column',
+defaults : {
+	border : true,
+	bodyStyle : 'padding:15px'
+},
+items : [{
+	columnWidth : 0.33,
+	title : 'Width=33%',
+	html : 'the width of this panel is 33% of the container'
+},{
+	columnWidth : 0.5,
+	title : 'Width=50%',
+	html : 'the width of this panel is 33% of the container'
+}]
+			</code></pre>
+        </div>
+        <div id="fit-detail">
+            <h2>Ext.layout.container.Fit</h2>
+            <pre><code>
+id: 'fit-panel',
+title: 'Fit Layout',
+layout: 'fit',
+items: {
+    title: 'Inner Panel',
+    html: '<p>This panel is fit within its container.</p>',
+    bodyStyle: 'padding:15px',
+    ui: Ext.themeName == 'neptune' ? 'light' : 'default',
+    border: false
+}
+			</code></pre>
+        </div>
     </div>
 </body>
 

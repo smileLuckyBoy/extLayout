@@ -50,6 +50,17 @@ Ext.onReady(function() {
 
     });
 
+    
+    function onMaximizeClick(){
+        var html = Ext.getDom('column-detail').innerHTML;
+        var win = new Ext.window.Window({
+            title : 'Code Preview',
+            html : html,
+            maximized : true,
+        });
+        win.show();
+    }
+
     //center panel
     var contentPanel = {
         id: 'content-panel',
@@ -97,7 +108,14 @@ Ext.onReady(function() {
                 split: true,
                 collapsible: true,
                 animCollapse: true,
-                width: 200
+                width: 200,
+                autoScroll: true,
+                tools: [{
+                    type: 'maximize',
+                    handler : function(panel,tool,event){
+                        onMaximizeClick();
+                    }
+                }]
             }
         ]
     });
