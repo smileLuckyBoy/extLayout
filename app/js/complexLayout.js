@@ -50,14 +50,30 @@ Ext.onReady(function() {
 
     });
 
-    
-    function onMaximizeClick(){
-        var html = Ext.getDom('column-detail').innerHTML;
-        var win = new Ext.window.Window({
-            title : 'Code Preview',
-            html : html,
-            maximized : true,
+    var html,
+        win = Ext.create('Ext.window.Window', {
+            title: 'Code Preview',
+            id: 'code-win',
+            autoScroll: true,
+            html: html,
+            maximized: true,
+            closeAction: 'hide',
+            bodyStyle: {
+                background: 'rgb(199,237,204)'
+            }
         });
+    win.on('beforeshow', function(win, opt) {
+        win.update(html);
+    });
+    Ext.create('Ext.fx.Anim', {
+        target: win,
+        duration: 1000
+
+    });
+
+    function onMaximizeClick(event, toolEl, panelHeader) {
+        // var html = Ext.getDom('column-detail').innerHTML;
+        html = panelHeader.up('#detail-panel').body.getHTML();
         win.show();
     }
 
@@ -112,8 +128,8 @@ Ext.onReady(function() {
                 autoScroll: true,
                 tools: [{
                     type: 'maximize',
-                    handler : function(panel,tool,event){
-                        onMaximizeClick();
+                    handler: function(event, toolEl, panelHeader) {
+                        onMaximizeClick(event, toolEl, panelHeader);
                     }
                 }]
             }
